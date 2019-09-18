@@ -1,5 +1,10 @@
 ### Project setup
 
+#### Requires
+- Git
+- Python3
+- Curl or Wget
+
 - **via curl**
 
 ```shell
