@@ -16,7 +16,7 @@ def test_valid_user_registration():
     response_data = json.loads(response.text)
     assert_that(response.status_code, 200).is_true()
     assert_that("QpwL5tke4Pnpja7X4").is_in(response_data["token"])
-    assert_that("4").is_in(response_data["id"])
+    assert_that(4).is_in(response_data["id"])
     assert_that(response_data).contains('id')
 
 

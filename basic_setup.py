@@ -20,11 +20,3 @@ def get_auth_token(email, password):
         _url('/login'),
         data={"email": email, "password": password}
     )
-
-
-def access_homepage(token):
-    return requests.post(_url('/login'), json={
-        "username": username,
-        "password": password,
-        "token": token
-    })
