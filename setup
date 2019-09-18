@@ -1,5 +1,18 @@
 #!/bin/bash
 
+function echo_step_title() {
+    local step_message=$1
+    step_message="$STEP_NUMBER. $step_message"
+    local message_length=${#step_message}
+    local repeated_stars=$(head -c ${message_length} /dev/zero | tr '\0' '*')
+    repeated_stars="$repeated_stars"
+    echo ""
+    echo "$repeated_stars"
+    echo ${step_message}
+    echo "$repeated_stars"
+    STEP_NUMBER=$(($STEP_NUMBER + 1))
+}
+
 function echo_with_indentation() {
     local message=$1
     echo -e "   $message"
@@ -39,7 +52,7 @@ function install_dependancies(){
 }
 
 function running_test(){
-    cd super-duper-octo-testing
+    echo_success_message "[*] running tests without coverage"
     pytest
 }
 
