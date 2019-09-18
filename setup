@@ -31,6 +31,7 @@ function clone_project(){
 function install_dependancies(){
     # Install project node_modules
     echo_success_message "[*] Installing project dependancies....."
+    cd super-duper-octo-testing
     python3 -m venv venv
     source venv/bin/activate
     pip install -r super-duper-octo-testing/requirements.txt
