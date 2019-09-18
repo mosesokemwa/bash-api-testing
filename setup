@@ -1,0 +1,51 @@
+#!/bin/bash
+
+function echo_with_indentation() {
+    local message=$1
+    echo -e "   $message"
+}
+
+function echo_error_message () {
+    local message=$1
+    echo_with_indentation "\033[38;5;9m$message\033[0m"
+}
+
+function echo_recommendation_message() {
+    local message=$1
+    echo_with_indentation "\033[38;5;11m$message\033[0m"
+}
+
+function echo_success_message() {
+    local message=$1
+    echo_with_indentation "\033[38;5;2m$message\033[0m"
+}
+
+
+function clone_project(){
+    # Cloning project
+    echo_success_message "[*] Git cloning project"
+    git clone https://github.com/mosesokemwa/super-duper-octo-testing.git
+    echo_success_message "[*] Git cloning hacker-bay project complete."
+}
+
+function install_dependancies(){
+    # Install project node_modules
+    echo_success_message "[*] Installing project dependancies....."
+    python3 -m venv venv
+    source venv/bin/activate
+    pip install -r super-duper-octo-testing/requirements.txt
+    echo_success_message "[*] Dependancies installed" "success"
+}
+
+function running_test(){
+    cd super-duper-octo-testing
+    pytest
+}
+
+function main() {
+    echo_step_title "super-duper-octo-testing"
+    clone_project
+    install_dependancies
+    running_test
+}
+main
