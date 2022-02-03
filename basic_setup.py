@@ -1,7 +1,7 @@
 import requests
 import json
 
-access_token = "SnbSKk4wF54U3deApumZdNqXE6RiHRqhp0H3"
+access_token = "access_token"
 
 
 def _url(path):
