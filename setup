@@ -44,7 +44,7 @@ function clone_project(){
 function install_dependancies(){
     # Install project node_modules
     echo_success_message "[*] Installing project dependancies....."
-    cd super-duper-octo-testing
+    cd bash-api-testing
     python3 -m venv venv
     source venv/bin/activate
     pip install -r requirements.txt
@@ -57,7 +57,7 @@ function running_test(){
 }
 
 function main() {
-    echo_step_title "super-duper-octo-testing"
+    echo_step_title "bash-api-testing"
     clone_project
     install_dependancies
     running_test
