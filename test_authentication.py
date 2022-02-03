@@ -3,8 +3,8 @@ import requests
 import json
 from assertpy import assert_that
 
-email = "eve.holt@reqres.in"
-password = "cityslicka"
+email = "email_address"
+password = "the_password"
 def test_get_auth_token_valid_user():
     response = basic_setup.get_auth_token(email, password)
     assert_that(response.status_code, '200').is_true()
