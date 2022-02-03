@@ -37,7 +37,7 @@ function echo_success_message() {
 function clone_project(){
     # Cloning project
     echo_success_message "[*] Git cloning project"
-    git clone https://github.com/mosesokemwa/super-duper-octo-testing.git
+    git clone https://github.com/mosesokemwa/bash-api-testing.git
     echo_success_message "[*] Git cloning hacker-bay project complete."
 }
 
